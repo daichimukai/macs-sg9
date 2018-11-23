@@ -15,6 +15,9 @@ def print_mean_and_std(files, field):
         print("  " + dirname + ":")
         print("    Mean: {}".format(np.mean(f[field])))
         print("    Standard Deviation: {}".format(np.std(f[field])))
+        if field == 'Area':
+            print("    Mean(Log): {}".format(np.mean(np.log(f[field]))))
+            print("    Standard Deviation(Log): {}".format(np.std(np.log(f[field]))))
 
 if len(sys.argv) == 1:
     usage_and_exit()
