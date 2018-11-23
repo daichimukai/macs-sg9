@@ -4,4 +4,4 @@
 Usage: python cell_analyze.py command
 ```
 
-`command` should be one of `Area`, `AR`, `Solidity`, or `Circularity`.
+`command` should be one of `Area`, `AR`, `Solidity`, `Circularity` or `all`.
