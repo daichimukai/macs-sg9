@@ -3,6 +3,8 @@ import sys
 import pandas as pd
 import numpy as np
 
+command_list = ['Area', 'AR', 'Solidity', 'Circularity']
+
 def usage_and_exit():
     print("Usage: {} command".format(sys.argv[0]))
     sys.exit(1)
@@ -22,8 +24,8 @@ def print_mean_and_std(files, field):
 if len(sys.argv) == 1:
     usage_and_exit()
 
-if not(sys.argv[1] in ['Area', 'AR', 'Solidity', 'Circularity']):
-    print("Error: command must be one of 'Area', 'AR', 'Solidity', or 'Circularity' (got '{}').".format(sys.argv[1]))
+if not(sys.argv[1] in command_list + ['all']):
+    print("Error: command must be one of 'Area', 'AR', 'Solidity', 'Circularity' or 'all'(got '{}').".format(sys.argv[1]))
     usage_and_exit()
 
 files = []
@@ -32,5 +34,10 @@ for dirname in ["image1", "image2", "image3", "image4", "image5", "image6"]:
     if os.path.isfile(path):
         files.append((dirname, pd.read_csv(path)))
 
-print(sys.argv[1])
-print_mean_and_std(files, sys.argv[1])
+if sys.argv[1] == 'all':
+    for command in command_list:
+        print(command)
+        print_mean_and_std(files, command)
+else:
+    print(sys.argv[1])
+    print_mean_and_std(files, sys.argv[1])
