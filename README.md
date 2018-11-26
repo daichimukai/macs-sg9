@@ -5,6 +5,7 @@
 .
 ├── README.md
 ├── assets
+│   ├── doc                ... Some documents
 │   ├── image1
 │   │   ├── image.tiff     ... Image file
 │   │   ├── Results.csv    ... Measurement Reuslts
