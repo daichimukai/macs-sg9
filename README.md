@@ -8,7 +8,7 @@
 │   ├── doc                ... Some documents
 │   ├── image1
 │   │   ├── image.tiff     ... Image file
-│   │   ├── Results.csv    ... Measurement Reuslts
+│   │   ├── Results.csv    ... Measurement Results
 │   │   └── RoiSet.zip     ... ROI dataset
 │   ├── image2
 │   ├── image3
